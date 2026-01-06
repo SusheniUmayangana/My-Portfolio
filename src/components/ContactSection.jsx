@@ -9,18 +9,43 @@ export const ContactSection = () => {
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         setIsSubmitting(true);
 
-        setTimeout(() => {
-            toast({
-                title: "Message Sent!",
-                description: "Thank you for your message. I'll get back to you soon.",
+        const formData = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            message: e.target.message.value,
+        };
+
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
             });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                toast({
+                    title: "Message Sent!",
+                    description: "Thank you for your message. I'll get back to you soon.",
+                });
+                e.target.reset(); // Clear the form
+            } else {
+                throw new Error('Server error');
+            }
+        } catch (error) {
+            toast({
+                title: "Something went wrong",
+                description: "Please try again or contact me directly via LinkedIn.",
+                variant: "destructive",
+            });
+        } finally {
             setIsSubmitting(false);
-        }, 1500);
+        }
     };
 
     return (
