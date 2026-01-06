@@ -30,6 +30,9 @@ export const HeroSection = () => {
                         <a href="#projects" className="cosmic-button">
                             View My Work
                         </a>
+                        <a href="/Susheni_Kalubowila_CV.pdf" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
+                            Download CV
+                        </a>
                     </div>
                 </div>
 
