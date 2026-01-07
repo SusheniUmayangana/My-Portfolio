@@ -3,7 +3,7 @@ import profileImg from "../assets/profile1.png";
 
 export const HeroSection = () => {
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+        <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
             {/* Background Glows for a Cloud/Data vibe */}
             <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -12,7 +12,7 @@ export const HeroSection = () => {
                 {/* Left Side: Text Content (Larger Width) */}
                 <div className="w-full lg:w-[65%] text-center lg:text-left space-y-8">
                     <div className="space-y-4">
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+                        <h1 className="text-4xl md:text-7xl font-bold tracking-tight leading-tight">
                             <span className="opacity-0 animate-fade-in block sm:inline"> Hi, I'm</span>
                             <span className="text-primary opacity-0 animate-fade-in-delay-1 block sm:inline ml-0 sm:ml-4"> Susheni</span>
                             <span className="text-gradient block lg:inline opacity-0 animate-fade-in-delay-2 ml-0 lg:ml-2"> Kalubowila</span>
