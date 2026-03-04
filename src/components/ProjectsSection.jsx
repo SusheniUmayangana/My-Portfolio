@@ -76,41 +76,30 @@ export const projects = [
 
 export const ProjectsSection = () => {
     const navigate = useNavigate();
-    const [selectedProject, setSelectedProject] = useState(null);
-
-    // Stop background scroll when modal is open
-    useEffect(() => {
-        if (selectedProject) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-    }, [selectedProject]);
 
     return (
         <section id="projects" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center"> Featured <span className="text-primary"> Projects</span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+                    Featured <span className="text-primary">Projects</span>
                 </h2>
 
                 <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                    A collection of my work in Data Science and AI Engineering, ranging from
-                    autonomous agent architectures and predictive modeling to deep learning
-                    research and cloud-native application deployment.
+                    A collection of my work in Data Science and AI Engineering.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {projects.map((project) => (
-                        <div key={project.id}
-                            onClick={() => navigate(`/project/${project.id}`)}
-                            className="group bg-card rounded-xl overflow-hidden border border-border cursor-pointer shadow-x5 card-hover hover:border-primary/50 transition-all flex flex-col">
+                        <div key={project.projectId}
+                            onClick={() => navigate(`/project/${project.projectId}`)}
+                            className="group bg-card rounded-xl overflow-hidden border border-border cursor-pointer shadow-sm card-hover hover:border-primary/50 transition-all flex flex-col relative">
 
-                            <div className="h-48 overflow-hidden">
+                            <div className="h-48 overflow-hidden relative">
                                 <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                                {/* REMOVE the absolute inset-0 bg-black/20 line here if it looks too dark */}
                             </div>
 
-                            <div className="p-6">
+                            <div className="p-6 flex flex-col flex-grow">
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.tags.slice(0, 3).map((tag, i) => (
                                         <span key={i} className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-md bg-secondary text-secondary-foreground">
@@ -119,75 +108,23 @@ export const ProjectsSection = () => {
                                     ))}
                                 </div>
 
-                                <h3 className="text-xl font-semibold mb-1"> {project.title} </h3>
-
+                                <h3 className="text-xl font-semibold mb-1 group-hover:text-primary transition-colors"> {project.title} </h3>
                                 <p className="text-muted-foreground text-sm mb-4"> {project.description} </p>
 
-                                <div className="flex gap-3 mt-4 text-muted-foreground">
-                                    {project.githubUrl && <Github size={18} />}
-                                    {project.demoUrl && <ExternalLink size={18} />}
-                                    {project.videoUrl && <PlayCircle size={18} />}
+                                <div className="mt-auto flex justify-between items-center">
+                                    <div className="flex gap-3 text-muted-foreground">
+                                        {project.githubUrl && <Github size={18} />}
+                                        {project.demoUrl && <ExternalLink size={18} />}
+                                        {project.videoUrl && <PlayCircle size={18} />}
+                                    </div>
+                                    <span className="text-xs font-semibold text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        Case Study <ArrowRight size={14} />
+                                    </span>
                                 </div>
-                                <span className="text-xs font-semibold text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Case Study <ArrowRight size={14} />
-                                </span>
                             </div>
                         </div>
                     ))}
                 </div>
-
-                {selectedProject && (
-                    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-background/90 backdrop-blur-md">
-                        <div className="bg-card border border-border max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative animate-fade-in">
-                            <button onClick={() => setSelectedProject(null)} className="absolute top-4 right-4 p-2 bg-secondary rounded-full hover:bg-primary hover:text-white transition-all z-10">
-                                <X size={20} />
-                            </button>
-
-                            <img src={selectedProject.image} className="w-full h-64 object-cover" />
-
-                            <div className="p-8">
-                                <div className="flex items-center gap-2 text-primary mb-2">
-                                    <Award size={18} />
-                                    <span className="text-xs font-bold uppercase tracking-widest">{selectedProject.role}</span>
-                                </div>
-                                <h3 className="text-3xl font-bold mb-4">{selectedProject.title}</h3>
-
-                                <p className="text-muted-foreground leading-relaxed mb-8">
-                                    {selectedProject.longDescription}
-                                </p>
-
-                                <div className="flex flex-wrap gap-4 mt-6">
-                                    {/* 1. GITHUB BUTTON */}
-                                    {selectedProject.githubUrl && (
-                                        <a href={selectedProject.githubUrl} target="_blank" className="flex items-center gap-2 px-6 py-2 bg-primary text-primary-foreground rounded-full font-medium">
-                                            <Github size={20} /> GitHub
-                                        </a>
-                                    )}
-                                    {/* 2. LIVE DEMO BUTTON */}
-                                    {selectedProject.demoUrl && (
-                                        <a href={selectedProject.demoUrl} target="_blank" className="flex items-center gap-2 px-6 py-2 border border-primary text-primary rounded-full font-medium">
-                                            <ExternalLink size={20} /> Live Demo
-                                        </a>
-                                    )}
-                                    {/* 3. VIDEO BUTTON */}
-                                    {selectedProject.videoUrl && (
-                                        <a href={selectedProject.videoUrl} target="_blank"
-                                            className="flex items-center gap-2 px-5 py-2.5 border border-primary text-primary rounded-full hover:bg-primary/5 transition-all text-sm font-medium">
-                                            <PlayCircle size={20} /> Watch Video
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )}
-
-                <div className="text-center mt-12">
-                    <a className="cosmic-button w-fit flex items-center mx-auto gap-2" target="_blank" href="https://github.com/SusheniUmayangana">
-                        Check My GitHub <ArrowRight size={16} />
-                    </a>
-                </div>
-
             </div>
         </section>
     );
