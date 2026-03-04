@@ -42,7 +42,7 @@ export const ProjectDetail = () => {
             <div className="relative z-10 container mx-auto max-w-4xl px-6 pt-32 pb-24">
                 {/* Back Navigation */}
                 <button
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/#projects")}
                     className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8"
                 >
                     <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
