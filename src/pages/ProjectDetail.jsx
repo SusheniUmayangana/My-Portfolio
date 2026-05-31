@@ -103,12 +103,91 @@ export const ProjectDetail = () => {
                             <h2 className="text-2xl font-bold flex items-center gap-3">
                                 <Database className="text-primary" /> Technical Implementation
                             </h2>
-                            <p className="text-muted-foreground leading-relaxed">
-                                For this project, the core challenge was handling data complexity while ensuring
-                                high performance. I utilized <strong>{project.tags.join(", ")}</strong> to build a
-                                modular architecture. This involved designing custom pipelines for data
-                                ingestion, feature engineering, and implementing robust testing to ensure reliability.
-                            </p>
+
+                            {/* PROJECT 7: SMART CAMPUS WEB DEV */}
+                            {project.projectId === 7 && (
+                                <div className="space-y-6 text-muted-foreground leading-relaxed">
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Backend Architecture (Spring Boot)</h3>
+                                        <p>
+                                            Implemented a robust **3-tier layered architecture** consisting of Controllers, Services, and Repositories.
+                                            Data persistence was handled via **Hibernate/JPA**. To ensure enterprise-grade reliability, I built custom global exception handlers and enforced rigorous server-side validation using **@Min and @NotNull constraints**, blocking malicious or malformed payloads from API clients like Postman.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Frontend & User Experience (React & Tailwind)</h3>
+                                        <p>
+                                            Developed an intuitive, fully accessible catalogue UI utilizing **Lucide icons** and **Tailwind CSS**.
+                                            The interface features complex, multi-criteria client-side filtering algorithms (filtering concurrently by capacity, geographical location, and asset type) with fluid real-time state alerts managed gracefully through **React Hot Toast**.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Security & Git Workflow</h3>
+                                        <p>
+                                            Enforced **Role-Based Access Control (RBAC)** to protect administrative endpoints. The project was built
+                                            collaboratively using a strict industry-standard version control system, featuring main branch protection, feature branching, and rigorous peer-reviewed Pull Requests to catch bugs early and eliminate merge conflicts before integration.
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* PROJECT 8: ENTERPRISE BUSINESS INTELLIGENCE */}
+                            {project.projectId === 8 && (
+                                <div className="space-y-6 text-muted-foreground leading-relaxed">
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Data Modeling & Warehousing (SQL Server)</h3>
+                                        <p>
+                                            Designed and built a structured **Star Schema Data Warehouse** in Microsoft SQL Server. I split transactional logs into clearly defined Dimension and Fact tables, establishing optimized relational tracking for clean, efficient execution on massive data queries.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Analytical Layers & OLAP Cubes (SSAS)</h3>
+                                        <p>
+                                            Engineered an **SSAS (SQL Server Analysis Services) Multidimensional Cube** to manage complex corporate hierarchies and business logic metrics. A critical hurdle overcome during this pipeline stage involved resolving environment conflicts—specifically debugging **64-bit client library compatibility exceptions (StandardDeveloper64)** to secure stable data streams between Visual Studio and our host engine.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Visual Reporting Analytics (Power BI)</h3>
+                                        <p>
+                                            Constructed executive-level analytical interfaces utilizing advanced **Power BI mechanics**. Implemented interactive cascading filter controls and configured deep **drill-through navigation pathways**, enabling corporate decision-makers to effortlessly sweep from high-level global summaries directly down to isolated, granular shop-floor operations.
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* PROJECT 9: RIGOROUS STATISTICAL AUDIT (R) */}
+                            {project.projectId === 9 && (
+                                <div className="space-y-6 text-muted-foreground leading-relaxed">
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Advanced Data Engineering & Imputation</h3>
+                                        <p>
+                                            Isolated and handled data anomalies within the HR dataset using **R**. Managed data missingness through **Stochastic Imputation (Median/Mode approach)** to preserve sample sizes without distorting the data's variance. Engineered a refined **Binary Performance Feature** to bypass artificial data constraints and drastically improve model sensitivity.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Inferential Analysis & Hypothesis Testing</h3>
+                                        <p>
+                                            Executed parametric and non-parametric statistical checks—including **Analysis of Variance (ANOVA)** and **Spearman Rank Correlation**—to mathematically isolate interaction dependencies and rigorously test hypothesis validity.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Predictive Logistic Regression & Null Result Analysis</h3>
+                                        <p>
+                                            Constructed a **Logistic Regression framework** to extract the probability of an employee reaching an 'Outstanding' evaluation tier based on Work-Life Balance levels. The mathematical evaluation surfaced a strong **Null Result (p = 0.985)**. Rather than writing it off, we mapped this to an economic corporate realization: the dataset exhibited a significant **Ceiling Effect** (84%+ Excellent baseline ratings), mathematically proving that the workforce's output remained resilient and self-motivated independent of shifting external work-life balance variances.
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* DEFAULT DATA SCIENCE ARCHITECTURE FOR ALL OTHER MANIFESTS */}
+                            {project.projectId !== 7 && project.projectId !== 8 && project.projectId !== 9 && (
+                                <p className="text-muted-foreground leading-relaxed">
+                                    For this project, the core challenge was handling data complexity while ensuring
+                                    high performance. I utilized <strong>{project.tags.join(", ")}</strong> to build a
+                                    modular architecture. This involved designing custom pipelines for data
+                                    ingestion, feature engineering, and implementing robust testing to ensure reliability.
+                                </p>
+                            )}
                         </section>
                     </div>
 

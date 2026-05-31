@@ -70,6 +70,35 @@ export const projects = [
         image: "/projects/ecom-dashboard.png",
         tags: ["Power BI", "DAX", "Power Query", "Data Modeling"],
         githubUrl: "https://github.com/SusheniUmayangana/E-Commerce-Sales-PowerBI-Analysis.git",
+    },
+    {
+        projectId: 8,
+        title: "Smart Campus Operations Hub",
+        role: "Full-Stack Developer (Module Lead)",
+        description: "Built a production-ready system to modernize campus resource allocation. Personally engineered the Spring Boot & React Facilities Catalogue.",
+        longDescription: "For our final year software engineering group milestone, we developed an enterprise-grade system to automate campus resource management and incident tracking. As a core developer, I took full ownership of the Facilities & Assets Catalogue module. I engineered a robust, validated Spring Boot REST API on the backend and mapped it to a highly responsive client-side filtering system in React, ensuring strict data integrity and a seamless user experience across the entire stack.",
+        image: "/projects/campus-hub.png",
+        tags: ["Spring Boot", "React", "Java", "REST API", "Tailwind CSS"],
+        githubUrl: "https://github.com/SusheniUmayangana/it3030-paf-2026-smart-campus-Y3S2-WE-200.git",
+    },
+    {
+        projectId: 9,
+        title: "Retail Sales Business Intelligence Stack",
+        role: "BI & Data Warehouse Engineer",
+        description: "Designed a complete Star Schema Data Warehouse, optimized SSAS analytical cubes, and built dynamic Power BI dashboards.",
+        longDescription: "Developed a full-scale Business Intelligence implementation to transform raw, disconnected retail transaction data into optimized corporate insights. I designed the foundational architecture using an optimized Star Schema model within SQL Server, constructed complex multi-dimensional hierarchies via SSAS, and established interactive downstream reporting channels within Power BI.",
+        image: "/projects/retail-bi.png",
+        tags: ["SQL Server", "SSAS", "Power BI", "Data Warehousing"],
+    },
+    {
+        projectId: 10,
+        title: "IBM HR Statistical Audit",
+        role: "Lead Statistical Analyst",
+        description: "Conducted a rigorous inferential study in R using Logistic Regression and ANOVA to audit the impact of Work-Life Balance on performance metrics.",
+        longDescription: "For our Theory and Practices in Statistical Modelling module, our team ('Statbits') analyzed the IBM HR Analytics dataset. We investigated whether a statistically verifiable relationship exists between employee Work-Life Balance and Performance Ratings. The study involved a comprehensive statistical pipeline in R, addressing advanced data anomalies like corporate 'Ceiling Effects' where high performance rates obscure typical correlation signals.",
+        image: "/projects/hr-analytics.png",
+        tags: ["R Language", "Statistical Modeling", "Logistic Regression", "Hypothesis Testing"],
+        githubUrl: "https://github.com/SusheniUmayangana/TPSM-WorkLife-Productivity-Analysis.git",
     }
 ];
 

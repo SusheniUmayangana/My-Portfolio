@@ -8,6 +8,8 @@ const skills = [
     { name: 'R', level: 75, category: "Programming" },
     { name: 'Java', level: 70, category: "Programming" },
     { name: 'Kotlin', level: 70, category: "Programming" },
+    { name: 'Spring Boot', level: 80, category: "Programming" },
+    { name: 'JavaScript', level: 70, category: "Programming" },
 
     // Data Science & AI
     { name: 'Machine Learning (XGBoost)', level: 95, category: "Data Science" },
