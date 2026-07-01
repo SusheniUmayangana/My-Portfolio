@@ -99,6 +99,16 @@ export const projects = [
         image: "/projects/hr-analytics.png",
         tags: ["R Language", "Statistical Modeling", "Logistic Regression", "Hypothesis Testing"],
         githubUrl: "https://github.com/SusheniUmayangana/TPSM-WorkLife-Productivity-Analysis.git",
+    },
+    {
+        projectId: 11,
+        title: "FutureGenZ Academy Portal",
+        role: "Lead Full-Stack Engineer",
+        description: "Engineered a secure, live web portal designed to evaluate and route Sri Lankan students looking to access higher education pathways in Germany.",
+        longDescription: "I built and deployed a production-ready web application for FutureGenZ Academy. The platform streamlines student registration and qualifications evaluations. Built using Next.js, TypeScript, and Tailwind CSS, the platform features a highly adaptive UI that dynamically shifts form fields based on the user's intent without triggering page reloads. Handled end-to-end data transmission by mapping custom schemas into a centralized, automated Formspree backend, ensuring all applicant logistics are encrypted and routed safely under strict SSL web standards.",
+        image: "/projects/futuregenz.png",
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Formspree API"],
+        demoUrl: "https://www.futuregenzacademy.com",
     }
 ];
 

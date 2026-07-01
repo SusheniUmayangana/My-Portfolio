@@ -104,8 +104,8 @@ export const ProjectDetail = () => {
                                 <Database className="text-primary" /> Technical Implementation
                             </h2>
 
-                            {/* PROJECT 7: SMART CAMPUS WEB DEV */}
-                            {project.projectId === 7 && (
+                            {/* PROJECT 8: SMART CAMPUS WEB DEV */}
+                            {project.projectId === 8 && (
                                 <div className="space-y-6 text-muted-foreground leading-relaxed">
                                     <div>
                                         <h3 className="text-xl font-semibold text-foreground mb-2">Backend Architecture (Spring Boot)</h3>
@@ -131,8 +131,8 @@ export const ProjectDetail = () => {
                                 </div>
                             )}
 
-                            {/* PROJECT 8: ENTERPRISE BUSINESS INTELLIGENCE */}
-                            {project.projectId === 8 && (
+                            {/* PROJECT 9: ENTERPRISE BUSINESS INTELLIGENCE */}
+                            {project.projectId === 9 && (
                                 <div className="space-y-6 text-muted-foreground leading-relaxed">
                                     <div>
                                         <h3 className="text-xl font-semibold text-foreground mb-2">Data Modeling & Warehousing (SQL Server)</h3>
@@ -155,8 +155,8 @@ export const ProjectDetail = () => {
                                 </div>
                             )}
 
-                            {/* PROJECT 9: RIGOROUS STATISTICAL AUDIT (R) */}
-                            {project.projectId === 9 && (
+                            {/* PROJECT 10: RIGOROUS STATISTICAL AUDIT (R) */}
+                            {project.projectId === 10 && (
                                 <div className="space-y-6 text-muted-foreground leading-relaxed">
                                     <div>
                                         <h3 className="text-xl font-semibold text-foreground mb-2">Advanced Data Engineering & Imputation</h3>
@@ -179,8 +179,32 @@ export const ProjectDetail = () => {
                                 </div>
                             )}
 
+                            {/* PROJECT 11: FUTUREGENZ ACADEMY LIVE PORTAL */}
+                            {project.projectId === 11 && (
+                                <div className="space-y-6 text-muted-foreground leading-relaxed">
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Frontend Engineering (Next.js & TypeScript)</h3>
+                                        <p>
+                                            Leveraged **Next.js (App Router)** and **TypeScript** to build a lightning-fast, production-ready portal. Engineered a highly adaptive component layout using **Tailwind CSS** that dynamically shifts input parameters based on the student's background without causing page refreshes.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Data Ingestion & Communication (Formspree API)</h3>
+                                        <p>
+                                            Structured end-to-end user pipeline architectures by mapping frontend schemas directly into a serverless **Formspree backend infrastructure**. Managed payload deliveries securely over modern RESTful protocols while validating form arrays before submission.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-foreground mb-2">Security, DevOps & Live Deployment</h3>
+                                        <p>
+                                            Deployed and maintained the live system using **Vercel**, managing custom workspace environment keys securely. Enforced strict transport safeguards by ensuring all user input data is transmitted using optimized **SSL/TLS encryption modules**.
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
+
                             {/* DEFAULT DATA SCIENCE ARCHITECTURE FOR ALL OTHER MANIFESTS */}
-                            {project.projectId !== 7 && project.projectId !== 8 && project.projectId !== 9 && (
+                            {project.projectId !== 8 && project.projectId !== 9 && project.projectId !== 10 && project.projectId !== 11 && (
                                 <p className="text-muted-foreground leading-relaxed">
                                     For this project, the core challenge was handling data complexity while ensuring
                                     high performance. I utilized <strong>{project.tags.join(", ")}</strong> to build a
